@@ -7,7 +7,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
+import User from './User'
+import Profile from './Profile'
 class App extends React.Component {
 
   render() {
@@ -20,7 +21,9 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/">
                 {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-              </Route>
+                <User/>
+                </Route>
+              <Route exact path="/Profile"> <Profile/> </Route>
               {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
             </Switch>
             <Footer />
