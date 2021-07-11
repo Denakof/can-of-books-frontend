@@ -12,32 +12,47 @@ Clone this repo to your own account with the green "Use this template" button. T
 
 # Project Name
 
-**Author**: Team Member Names Goes Here
+**Author**: Dena
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
+
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
+everthing is in the components
+
 ## Getting Started
+
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
+all shown in the code
+
 ## Architecture
+
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
+react-bootstrap react
+
 ## Change Log
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
+4:47pm
+
 ## Credit and Collaborations
+
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+collaborated with omar alazaizeh
 
-Estimate of time needed to complete: _____
+Name of feature: ******\_\_******auth0********\_\_********
 
-Start time: _____
+Estimate of time needed to complete: **3\_**
 
-Finish time: _____
+Start time: **2:00\_**
 
-Actual time needed to complete: _____
+Finish time: **4:41PM\_**
+
+Actual time needed to complete: **150mins\_**
