@@ -15,17 +15,27 @@ class MyFavoriteBooks extends React.Component {
       books: null,
     };
   }
+editBook =(index,bookObj)=>{
+  axios
+  .post(
+    `${process.env.REACT_APP_SERVER_URL}/updateBook/${index}?inputEmail=${this.props.auth0.user.email}`,
+    bookObj
+  )
+  .then((resultData) => {
+    this.updateBooks(resultData);
+  });
+}
+
   updateBooks = (results)=>{
 
 
     this.setState({ 
       books: results.data.map((element,index) => {
-        return <Books  index={index} removeBooks={this.removeBooks} ele={element} />;
+        return <Books editBook={this.editBook} updateBooks={this.updateBooks} index={index} removeBooks={this.removeBooks} ele={element} />;
       }),
     });
   
   }
-
 
   removeBooks = (index) => {
     axios
@@ -36,7 +46,7 @@ class MyFavoriteBooks extends React.Component {
         console.log(results.data);
         this.setState({
           books: results.data.map((element,index) => {
-            return <Books index={index} removeBooks={this.removeBooks} ele={element} />;
+            return <Books editBook={this.editBook}  updateBooks={this.updateBooks}  index={index} removeBooks={this.removeBooks} ele={element} />;
           }),
         });
       })
@@ -54,7 +64,7 @@ class MyFavoriteBooks extends React.Component {
         console.log(results.data);
         this.setState({
           books: results.data.map((element,index) => {
-            return <Books index={index} removeBooks={this.removeBooks} ele={element} />;
+            return <Books editBook={this.editBook}  updateBooks={this.updateBooks}  index={index} removeBooks={this.removeBooks} ele={element} />;
           }),
         });
       })
@@ -67,8 +77,9 @@ class MyFavoriteBooks extends React.Component {
       <Jumbotron>
         <h1>My Favorite Books</h1>
         <p>This is a collection of my favorite books</p>
-        <>{this.state.books}</>
         <MyForm updateBooks={this.updateBooks} removeBooks={this.removeBooks} />
+        <br></br>
+        <>{this.state.books}</>
       </Jumbotron>
     );
   }

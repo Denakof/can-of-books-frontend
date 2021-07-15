@@ -1,9 +1,35 @@
 import React, { Component } from "react";
 import { Card, Button } from "react-bootstrap";
+import MyEditForm from "./MyEditForm";
 export class Books extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          show: false,
+        };
+      }
+    
+      handleClose = () => {
+        this.setState({
+          show: false,
+        });
+      };
+    
+      handleShow = () => {
+        this.setState({
+          show: true,
+        });
+      };
   render() {
     return (
-      <Card style={{ width: "18rem", margin: "20px" }}>
+        <>
+        <MyEditForm  editBook={this.props.editBook}    handleShow={this.handleShow}
+          handleClose={this.handleClose}
+          show={this.state.show}
+          book={this.props.ele}
+          updateBooks={this.props.updateBooks}
+          index={this.props.index}/>
+      <Card style={{ width: "18rem", margin: "20px" , display :'inline-block' }}>
         <Card.Img
           style={{ width: "18rem" }}
           variant="top"
@@ -18,8 +44,14 @@ export class Books extends Component {
           variant="danger"
         >
           Remove
+        </Button>  <Button
+          onClick={this.handleShow}
+          variant="info"
+        >
+          Update
         </Button>
       </Card>
+      </>
     );
   }
 }
